@@ -233,6 +233,11 @@ class _AnimatedNavigationBar extends StatelessWidget {
                 label: AppLocalizations.of(context).users,
               ),
               NavigationDestination(
+                icon: const Icon(Icons.notifications_outlined),
+                selectedIcon: const Icon(Icons.notifications),
+                label: AppLocalizations.of(context).notifications,
+              ),
+              NavigationDestination(
                 icon: const Icon(Icons.settings_outlined),
                 selectedIcon: const Icon(Icons.settings),
                 label: AppLocalizations.of(context).settings,
@@ -248,7 +253,8 @@ class _AnimatedNavigationBar extends StatelessWidget {
     if (route.startsWith('/home') || route.startsWith('/showcase') || route.startsWith('/forms')) return 0;
     if (route.startsWith('/dashboard')) return 1;
     if (route.startsWith('/users')) return 2;
-    if (route.startsWith('/settings')) return 3;
+    if (route.startsWith('/notifications')) return 3;
+    if (route.startsWith('/settings')) return 4;
     return 0;
   }
 
@@ -264,6 +270,9 @@ class _AnimatedNavigationBar extends StatelessWidget {
         context.go('/users');
         break;
       case 3:
+        context.go('/notifications');
+        break;
+      case 4:
         context.go('/settings');
         break;
     }
