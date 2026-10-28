@@ -9,10 +9,10 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Flutter Starter';
+  String get appTitle => 'NEXXO';
 
   @override
-  String get welcomeMessage => 'Bienvenido a Flutter Starter';
+  String get welcomeMessage => 'Bienvenido a NEXXO';
 
   @override
   String get home => 'Inicio';
@@ -150,7 +150,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get uploadError => 'Error en la subida';
 
   @override
-  String get welcomeTitle => 'Bienvenido a Flutter Starter';
+  String get welcomeTitle => 'Bienvenido a NEXXO';
 
   @override
   String get welcomeSubtitle =>
@@ -492,13 +492,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get about => 'Acerca de';
 
   @override
-  String get flutterStarterApp => 'Aplicación Flutter Starter';
+  String get flutterStarterApp => 'Aplicación NEXXO';
 
   @override
   String get version => 'Versión 1.0.0';
 
   @override
-  String get flutterStarter => 'Flutter Starter';
+  String get flutterStarter => 'NEXXO';
 
   @override
   String get material3StarterTemplate => 'Una plantilla starter de Material 3';
@@ -791,7 +791,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get next => 'Siguiente';
 
   @override
-  String get welcomeToFlutterStarter => 'Bienvenido a Flutter Starter';
+  String get welcomeToFlutterStarter => 'Bienvenido a NEXXO';
 
   @override
   String get onboardingWelcomeDescription =>
