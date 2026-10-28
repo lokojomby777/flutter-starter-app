@@ -11,8 +11,10 @@ Future<GoRouter> mountWorkspace(
   required double width,
   String location = '/home',
 }) async {
-  await tester.binding.setSurfaceSize(Size(width, 844));
-  addTearDown(() => tester.binding.setSurfaceSize(null));
+  tester.view.devicePixelRatio = 1;
+  tester.view.physicalSize = Size(width, 844);
+  addTearDown(tester.view.resetPhysicalSize);
+  addTearDown(tester.view.resetDevicePixelRatio);
   final router = GoRouter(initialLocation: location, routes: [
     ShellRoute(
       builder: (_, __, child) => ResponsiveScaffold(child: child),
@@ -86,7 +88,7 @@ void main() {
   testWidgets('Notifications selection survives switching from phone to desktop and back', (tester) async {
     final router = await mountWorkspace(tester, width: 390, location: '/notifications');
     for (final width in [1200.0, 390.0]) {
-      await tester.binding.setSurfaceSize(Size(width, 844));
+      tester.view.physicalSize = Size(width, 844);
       await tester.pumpAndSettle();
       expect(router.routeInformationProvider.value.uri.path, '/notifications');
       expectSelection(tester, width, 3);
