@@ -1,0 +1,34 @@
+name: NEXXO Flutter checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [feature/nexxo-inicio-v1]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: flutter-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.8'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Run widget tests
+        run: flutter test --reporter expanded
+      - name: Analyze Dart code
+        if: success() || failure()
+        run: flutter analyze
