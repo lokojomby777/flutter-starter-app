@@ -20,7 +20,7 @@ class App extends ConsumerWidget {
     return ErrorBoundary(
       isRootErrorBoundary: true,
       child: MaterialApp.router(
-        title: 'Flutter Starter', // Note: This should use context but MaterialApp doesn't support dynamic title easily
+        title: 'NEXXO', // Note: This should use context but MaterialApp doesn't support dynamic title easily
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme(
           ColorScheme.fromSeed(
