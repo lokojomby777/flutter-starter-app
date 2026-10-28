@@ -116,7 +116,7 @@ class SettingsPage extends ConsumerWidget {
 class _SectionHeader extends StatelessWidget {
   final String title;
   
-  const _SectionHeader({required this.title, super.key});
+  const _SectionHeader({required this.title});
 
   @override
   Widget build(BuildContext context) {

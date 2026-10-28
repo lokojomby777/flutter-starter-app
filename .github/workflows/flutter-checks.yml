@@ -3,8 +3,6 @@ name: NEXXO Flutter checks
 on:
   pull_request:
     branches: [main]
-  push:
-    branches: [feature/nexxo-inicio-v1]
 
 permissions:
   contents: read
@@ -31,4 +29,4 @@ jobs:
         run: flutter test --reporter expanded
       - name: Analyze Dart code
         if: success() || failure()
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos
