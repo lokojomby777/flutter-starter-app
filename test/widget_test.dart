@@ -83,7 +83,7 @@ void main() {
     }
   }
 
-  const destinations = {
+  final destinations = {
     Icons.dashboard_outlined: '/dashboard',
     Icons.notifications_outlined: '/notifications',
     Icons.tune_outlined: '/settings',
