@@ -77,7 +77,7 @@ void main() {
         await mountHome(tester, language: entry.key, size: Size(width, 844));
         expect(find.text(entry.value), findsOneWidget);
         expect(find.text('NEXXO'), findsOneWidget);
-        expect(find.byType(FilledButton), findsNWidgets(3));
+        expect(find.byWidgetPredicate((widget) => widget is FilledButton), findsNWidgets(3));
         expect(tester.takeException(), isNull);
       });
     }
@@ -97,7 +97,7 @@ void main() {
       );
       final button = find.descendant(
         of: card,
-        matching: find.byType(FilledButton),
+        matching: find.byWidgetPredicate((widget) => widget is FilledButton),
       );
       await tester.ensureVisible(button);
       await tester.tap(button);
