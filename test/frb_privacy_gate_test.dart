@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_starter_app/core/frb_privacy_gate.dart';
+import 'package:flutter_starter/core/frb_privacy_gate.dart';
 
 void main() {
   test('defaults deny; user action and permission required', () {
